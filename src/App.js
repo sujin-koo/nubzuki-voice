@@ -11,7 +11,8 @@ const samplePairs = [
     audio_a: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
     model_a: "FaceTTS-v1",
-    model_b: "FaceTTS-v2"
+    model_b: "FaceTTS-v2",
+    image: "/nubzuki-images/1.png"
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const samplePairs = [
     audio_a: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
     model_a: "FaceTTS-v1",
-    model_b: "FaceTTS-v2"
+    model_b: "FaceTTS-v2",
+    image: "/nubzuki-images/2.png"
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const samplePairs = [
     audio_a: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
     model_a: "FaceTTS-v1",
-    model_b: "FaceTTS-v2"
+    model_b: "FaceTTS-v2",
+    image: "/nubzuki-images/3.png"
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ const samplePairs = [
     audio_a: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
     model_a: "FaceTTS-v1",
-    model_b: "FaceTTS-v2"
+    model_b: "FaceTTS-v2",
+    image: "/nubzuki-images/4.png"
   },
   {
     id: 5,
@@ -43,7 +47,8 @@ const samplePairs = [
     audio_a: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
     model_a: "FaceTTS-v1",
-    model_b: "FaceTTS-v2"
+    model_b: "FaceTTS-v2",
+    image: "/nubzuki-images/5.png"
   }
 ];
 
@@ -405,7 +410,11 @@ function App() {
         {/* 설명 카드 */}
         <div className="instruction-card">
           <div className="nubzuki-image-placeholder">
-            <NubzukiCharacter expression={nubzukiExpression} />
+            <img
+              src={currentPair?.image}
+              alt="넙죽이 얼굴"
+              className="nubzuki-face-image"
+            />
             <span className="image-label">넙죽이 얼굴 이미지</span>
           </div>
           <div className="instruction-content">
