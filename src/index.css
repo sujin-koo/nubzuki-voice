@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Noto Sans KR', sans-serif;
   background: linear-gradient(180deg, var(--kaist-sky) 0%, #ffffff 100%);
   min-height: 100vh;
   overflow-x: hidden;
