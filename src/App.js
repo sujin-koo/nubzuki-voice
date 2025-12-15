@@ -2,8 +2,30 @@ import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 // =============================================
+// 유틸리티 함수
+// =============================================
+// 배열을 섞는 함수 (Fisher-Yates shuffle)
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// 1~16까지의 이미지 번호 배열 생성 및 섞기
+const getRandomImageNumbers = (count) => {
+  const allImages = Array.from({ length: 16 }, (_, i) => i + 1);
+  const shuffled = shuffleArray(allImages);
+  return shuffled.slice(0, count);
+};
+
+// =============================================
 // 샘플 데이터 (실제로는 서버에서 가져옴)
 // =============================================
+const randomImageNumbers = getRandomImageNumbers(5);
+
 const samplePairs = [
   {
     id: 1,
@@ -12,7 +34,7 @@ const samplePairs = [
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
     model_a: "FaceTTS-v1",
     model_b: "FaceTTS-v2",
-    image: `${process.env.PUBLIC_URL}/nubzuki-images/1.png`
+    image: `${process.env.PUBLIC_URL}/nubzuki-images/${randomImageNumbers[0]}.png`
   },
   {
     id: 2,
@@ -21,7 +43,7 @@ const samplePairs = [
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
     model_a: "FaceTTS-v1",
     model_b: "FaceTTS-v2",
-    image: `${process.env.PUBLIC_URL}/nubzuki-images/2.png`
+    image: `${process.env.PUBLIC_URL}/nubzuki-images/${randomImageNumbers[1]}.png`
   },
   {
     id: 3,
@@ -30,7 +52,7 @@ const samplePairs = [
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
     model_a: "FaceTTS-v1",
     model_b: "FaceTTS-v2",
-    image: `${process.env.PUBLIC_URL}/nubzuki-images/3.png`
+    image: `${process.env.PUBLIC_URL}/nubzuki-images/${randomImageNumbers[2]}.png`
   },
   {
     id: 4,
@@ -39,7 +61,7 @@ const samplePairs = [
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
     model_a: "FaceTTS-v1",
     model_b: "FaceTTS-v2",
-    image: `${process.env.PUBLIC_URL}/nubzuki-images/4.png`
+    image: `${process.env.PUBLIC_URL}/nubzuki-images/${randomImageNumbers[3]}.png`
   },
   {
     id: 5,
@@ -48,7 +70,7 @@ const samplePairs = [
     audio_b: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
     model_a: "FaceTTS-v1",
     model_b: "FaceTTS-v2",
-    image: `${process.env.PUBLIC_URL}/nubzuki-images/5.png`
+    image: `${process.env.PUBLIC_URL}/nubzuki-images/${randomImageNumbers[4]}.png`
   }
 ];
 
