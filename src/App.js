@@ -402,14 +402,18 @@ function App() {
         <header className="header">
           <div className="logo-section">
             <div className="nubzuki-avatar">
-              <NubzukiCharacter expression={nubzukiExpression} />
+              <img
+                src={`${process.env.PUBLIC_URL}/nubzuki-images/1.png`}
+                alt="넙죽이"
+                className="nubzuki-avatar-image"
+              />
             </div>
             <div className="title-section">
               <h1 className="main-title">넙죽이 보이스</h1>
               <p className="subtitle">Face TTS 피드백 수집</p>
             </div>
           </div>
-          
+
           <div className="kaist-badge">
             <span>KAIST</span>
           </div>
